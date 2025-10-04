@@ -16,8 +16,10 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
+            lspconfig.jsonls.setup({ capabilities = capabilities})
 			lspconfig.pyright.setup({ capabilities = capabilities })
 			lspconfig.bashls.setup({ capabilities = capabilities })
+            lspconfig.ansiblels.setup({ capabilities = capabilities})
 			vim.diagnostic.config({ virtual_text = true })
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
