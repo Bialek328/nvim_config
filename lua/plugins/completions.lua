@@ -11,7 +11,7 @@ return {
         config = function()
             local cmp = require("cmp")
             -- will exclude all javascript snippets
-            require("luasnip.loaders.from_vscode").load()
+            require("luasnip.loaders.from_vscode").lazy_load()
 
             cmp.setup({
                 -- snippet = {
@@ -32,9 +32,9 @@ return {
                     ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
                 }),
                 sources = cmp.config.sources({
-                    -- { name = "nvim_lsp" },
+                    { name = "nvim_lsp" },
                     --{ name = "vsnip" }, -- For vsnip users.
-                    { name = "luasnip" }, -- For luasnip users.
+                    -- { name = "luasnip" }, -- For luasnip users.
                     -- { name = 'ultisnips' }, -- For ultisnips users.
                     -- { name = 'snippy' }, -- For snippy users.
                 }, {
